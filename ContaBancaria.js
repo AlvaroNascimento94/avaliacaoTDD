@@ -1,6 +1,8 @@
+const SALDO_INICIAL_PADRAO = 0;
+
 class ContaBancaria {
     constructor() {
-        this.saldo = 0;
+        this.saldo = SALDO_INICIAL_PADRAO;
     }
 }
 
