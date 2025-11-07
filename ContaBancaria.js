@@ -5,10 +5,14 @@ class ContaBancaria {
         this.saldo = SALDO_INICIAL_PADRAO;
     }
 
-    depositar(valor) {
-        if(valor <= 0) {
+    static _validarValor(valor) {
+        if (valor <= 0) {
             throw new Error('Valor de depósito inválido');
         }
+    }
+
+    depositar(valor) {
+        ContaBancaria._validarValor(valor);
         this.saldo += valor;
     }
 }
