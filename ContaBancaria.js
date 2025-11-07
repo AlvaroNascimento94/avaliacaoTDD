@@ -15,6 +15,10 @@ class ContaBancaria {
         ContaBancaria._validarValor(valor);
         this.saldo += valor;
     }
+
+    sacar(valor) {
+        this.saldo -= valor;
+    }
 }
 
 module.exports = ContaBancaria;
