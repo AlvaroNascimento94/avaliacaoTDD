@@ -16,7 +16,8 @@ class ContaBancaria {
         this.saldo += valor;
     }
 
-    sacar(valor) {
+   sacar(valor) {
+        ContaBancaria._validarValor(valor); 
         this.saldo -= valor;
     }
 }
