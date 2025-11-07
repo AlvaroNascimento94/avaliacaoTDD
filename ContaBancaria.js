@@ -6,7 +6,10 @@ class ContaBancaria {
     }
 
     depositar(valor) {
-        this.saldo = this.saldo + valor;
+        if(valor <= 0) {
+            throw new Error('Valor de depósito inválido');
+        }
+        this.saldo += valor;
     }
 }
 
