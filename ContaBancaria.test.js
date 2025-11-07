@@ -10,3 +10,17 @@ test('deve realizar um depósito válido', () => {
     conta.depositar(100);
     expect(conta.saldo).toBe(100);
 });
+
+test('não deve permitir depósito de valor zero', () => {
+    const conta = new ContaBancaria();
+    const acao = () => conta.depositar(0);
+    expect(acao).toThrow('Valor do depósito deve ser maior que zero');
+    expect(conta.saldo).toBe(0);
+});
+
+test('não deve permitir depósito de valor negativo', () => {
+    const conta = new ContaBancaria();
+    const acao = () => conta.depositar(-50);
+    expect(acao).toThrow('Valor do depósito deve ser maior que zero');
+    expect(conta.saldo).toBe(0);
+});
