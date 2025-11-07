@@ -5,19 +5,19 @@ class ContaBancaria {
         this.saldo = SALDO_INICIAL_PADRAO;
     }
 
-    static _validarValor(valor) {
+    static _validarValorPositivo(valor) {
         if (valor <= 0) {
-            throw new Error('Valor de depósito inválido');
+            throw new Error('O valor da operação deve ser maior que zero');
         }
     }
 
     depositar(valor) {
-        ContaBancaria._validarValor(valor);
+        ContaBancaria._validarValorPositivo(valor);
         this.saldo += valor;
     }
 
    sacar(valor) {
-        ContaBancaria._validarValor(valor); 
+        ContaBancaria._validarValorPositivo(valor);
         if (valor > this.saldo) {
             throw new Error('Saldo insuficiente');
         }
