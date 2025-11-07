@@ -26,3 +26,10 @@ test('não deve permitir depósito de valor negativo', () => {
     expect(acao).toThrow('Valor de depósito inválido');
     expect(conta.saldo).toBe(0);
 });
+
+test('deve realizar um saque válido', () => {
+    const conta = new ContaBancaria();
+    conta.depositar(100);
+    conta.sacar(60);
+    expect(conta.saldo).toBe(40);
+});
