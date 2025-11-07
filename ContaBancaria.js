@@ -18,6 +18,9 @@ class ContaBancaria {
 
    sacar(valor) {
         ContaBancaria._validarValor(valor); 
+        if (valor > this.saldo) {
+            throw new Error('Saldo insuficiente');
+        }
         this.saldo -= valor;
     }
 }
